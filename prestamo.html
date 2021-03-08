@@ -5,13 +5,19 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Alumno</title>
+    <title>Prestamo</title>
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-reset.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="js/bootstrap-fileupload/bootstrap-fileupload.css" />
     <link rel="stylesheet" type="text/css" href="js/gritter/css/jquery.gritter.css" />
     <link rel="stylesheet" type="text/css" href="plugins/DataTables/datatables.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-multi-select/css/multi-select.css" />
+    <link rel="stylesheet" type="text/css" href="js/jquery-tags-input/jquery.tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/dropzone/dist/dropzone.css">
+    <link rel="stylesheet" type="text/css" href="js/select2/select2.css" />
+
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
 
@@ -22,7 +28,7 @@
             <div class="brand">
 
                 <a href="index.html" class="logo">
-                    <!--<img style="width: 125px" src="images/logo-utt.png" alt="">-->
+                    <img style="width: 125px" src="images/logo-utt.png" alt="">
                 </a>
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars"></div>
@@ -54,7 +60,7 @@
                         <ul class="sidebar-menu" id="nav-accordion">
                             <li class="sub-menu">
                                 <a href="javascript:;">
-                                    <i class="fa fa-group"></i>
+                                    <i class="fa fa-laptop"></i>
                                     <span>Usuarios </span>
                                 </a>
                                 <ul class="sub">
@@ -65,7 +71,7 @@
                             </li>
                             <li class="sub-menu">
                                 <a href="javascript:;" class="active">
-                                    <i class="fa fa-tasks"></i>
+                                    <i class="fa fa-book"></i>
                                     <span>Prestamos </span>
                                 </a>
                                 <ul class="sub">
@@ -76,7 +82,7 @@
                             </li>
                             <li class="sub-menu">
                                 <a href="   avascript:;">
-                                    <i class="fa fa-share-square-o"></i>
+                                    <i class="fa fa-tasks"></i>
                                     <span>Asignar Resguardo </span>
                                 </a>
                                 <ul class="sub">
@@ -87,7 +93,7 @@
                             </li>
                             <li class="sub-menu">
                                 <a href="javascript:;">
-                                    <i class="fa fa-suitcase"></i>
+                                    <i class="fa fa-envelope"></i>
                                     <span>Proveedores </span>
                                 </a>
                                 <ul class="sub">
@@ -97,7 +103,7 @@
                             </li>
                             <li class="sub-menu">
                                 <a href="javascript:;">
-                                    <i class="fa fa-laptop"></i>
+                                    <i class=" fa fa-bar-chart-o"></i>
                                     <span>Equipos </span>
                                 </a>
                                 <ul class="sub">
@@ -108,7 +114,7 @@
                             </li>
                             <li class="sub-menu">
                                 <a href="javascript:;">
-                                    <i class=" fa fa-ticket"></i>
+                                    <i class=" fa fa-bar-chart-o"></i>
                                     <span>Facturas </span>
                                 </a>
                                 <ul class="sub">
@@ -126,47 +132,78 @@
                 <div class="row">
                     <div class="col-md-12">
                         <section class="panel">
-                            <header class="panel-heading">
-                                Alumnos
-                            </header>
                             <div class="panel-body">
-                                <table class="table table-striped table-hover table-bordered" id="AlumTable">
-                                    <thead>
-                                        <tr>
-                                            <th>Matricula</th>
-                                            <th>Nombre</th>
-                                            <th>Grupo</th>
-                                            <th>Correo Electronico</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr id="row_1">
-                                            <td>031768</td>
-                                            <td>Andres Flores Gutierrez</td>
-                                            <td>7A</td>
-                                            <td>flores@outlook.com</td>
-                                        </tr>
-                                        <tr id="row_2">
-                                            <td>03147845</td>
-                                            <td>Sebastian Llamas Zamudio</td>
-                                            <td>9C</td>
-                                            <td>llamas@gmail.com</td>
-                                        </tr>
-                                        <tr id="row_3">
-                                            <td>464154</td>
-                                            <td>Benjamon Ojeda Estrada</td>
-                                            <td>4T</td>
-                                            <td>Ojeda@gmail.com</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="row mb-15 mt-15">
+                                    <div class="col-md-4 col-md-offset-8">
+                                        <button id="btn-Excel" class="btn btn-success">Subir Excel</button>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Matricula</label>
+                                        <div class="col-md-4">
+                                            <input size="16" type="text" value=""  class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Nombre</label>
+                                        <div class="col-md-4">
+                                            <input size="16" type="text" value=""  class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Apellido</label>
+                                        <div class="col-md-4">
+                                            <input size="16" type="text" value=""  class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Correo</label>
+                                        <div class="col-md-4">
+                                            <input size="16" type="text" value=""  class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Grupo</label>
+                                        <div class="col-md-4">
+                                            <select class="form-control"  id="source">
+                                                <option value="AK">1A</option>
+                                                <option value="HI">2B</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Foto</label>
+                                        <div class="col-md-9">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                </div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                        <span class="btn btn-white btn-file">
+                                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Seleeccionar imagen</span>
+                                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                                        <input type="file" class="default" />
+                                                        </span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-8">
+                                        <button  class="btn btn-info">Subir Excel</button>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </div>
                 </div>
             </section>
         </section>
-
 
     </section>
 <script src="js/jquery.js"></script>
@@ -177,39 +214,16 @@
 <script src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
 <script src="plugins/DataTables/datatables.js"></script>
+<script src="plugins/dropzone/dist/dropzone.js"></script>
 <script src="js/scripts.js"></script>
 <script type="text/javascript">
+    Dropzone.autoDiscover = false;
     $(document).ready(function(){
-        $("#AlumTable").DataTable({
-            dom: 'Bfrtip',
-            bPaginate: true,
-            bLengthChange: false,
-            bInfo: false,
-            bAutoWidth: false,
-            buttons: [
-                {
-                    text: 'Crear',
-                    className: 'btn-blue',
-                    action: function ( e, dt, node, config ) {
-                        alert( 'Button activated' );
-                    }
-                },
-                {
-                    text: 'Editar',
-                    className: 'btn-yellow',
-                    action: function ( e, dt, node, config ) {
-                        alert( 'Button activated' );
-                    }
-                },
-                {
-                    text: 'Eliminar',
-                    className: 'btn-red',
-                    action: function ( e, dt, node, config ) {
-                        alert( 'Button activated' );
-                    }
-                }
-            ]
+        $("#btn-Excel").click(function(){
+            $("#modalExcel").modal();
         });
+
+        $("#ExcelDrop").dropzone({ url: "/file/post" });
     });
 </script>
 
