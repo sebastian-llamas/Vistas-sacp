@@ -130,76 +130,153 @@
         <section id="main-content" >
             <section class="wrapper">
                 <div class="row">
-                    <div class="col-md-12">
-                        <section class="panel">
-                            <div class="panel-body">
-                                <div class="row mb-15 mt-15">
-                                    <div class="col-md-4 col-md-offset-8">
-                                        <button id="btn-Excel" class="btn btn-success">Subir Excel</button>
-                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel">
+                            <div class="panel-body profile-information">
+                                <div class="profile-pic text-center">
+                                    <img src="images/lock_thumb.jpg" alt=""/>
                                 </div>
-                                <div class="form-horizontal">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Matricula</label>
-                                        <div class="col-md-4">
-                                            <input size="16" type="text" value=""  class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Nombre</label>
-                                        <div class="col-md-4">
-                                            <input size="16" type="text" value=""  class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Apellido</label>
-                                        <div class="col-md-4">
-                                            <input size="16" type="text" value=""  class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Correo</label>
-                                        <div class="col-md-4">
-                                            <input size="16" type="text" value=""  class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Grupo</label>
-                                        <div class="col-md-4">
-                                            <select class="form-control"  id="source">
-                                                <option value="AK">1A</option>
-                                                <option value="HI">2B</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group last">
-                                        <label class="control-label col-md-3">Foto</label>
-                                        <div class="col-md-9">
-                                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
-                                                </div>
-                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                                <div>
-                                                        <span class="btn btn-white btn-file">
-                                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Seleeccionar imagen</span>
-                                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
-                                                        <input type="file" class="default" />
-                                                        </span>
-                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> Remove</a>
-                                                </div>
-                                            </div>
+                                <div class="row mt-30">
+                                    <div class="col-md-12">
+                                        <div class="location-info">
+                                            <h5>Nombre: <span id="NameAum"></span> </h5>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-8">
-                                        <button  class="btn btn-info">Subir Excel</button>
+                                <div class="row mt-15">
+                                    <div class="col-md-12">
+                                        <div class="location-info">
+                                            <h5>Matricula: <span id="matAlum"></span> </h5>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-15">
+                                    <div class="col-md-12">
+                                        <div class="location-info">
+                                            <h5>Turno: <span id="matAlum"></span> </h5>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-15">
+                                    <div class="col-md-12">
+                                        <div class="location-info">
+                                            <h5>Clase: <span id="classAlum"></span> </h5>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-15">
+                                    <div class="col-md-12">
+                                        <div class="location-info">
+                                            <h5>Tutor: <span id="classAlum"></span> </h5>
+                                            <p></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese la matricula">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <input type="text" class="form-control w-50" placeholder="Escanear Marbete">
+                                        <table class="table table-striped table-hover table-bordered" id="AlumTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Matricula</th>
+                                                    <th>Nombre</th>
+                                                    <th>Grupo</th>
+                                                    <th>Correo Electronico</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="row_1">
+                                                    <td>031768</td>
+                                                    <td>Andres Flores Gutierrez</td>
+                                                    <td>7A</td>
+                                                    <td>flores@outlook.com</td>
+                                                </tr>
+                                                <tr id="row_2">
+                                                    <td>03147845</td>
+                                                    <td>Sebastian Llamas Zamudio</td>
+                                                    <td>9C</td>
+                                                    <td>llamas@gmail.com</td>
+                                                </tr>
+                                                <tr id="row_3">
+                                                    <td>464154</td>
+                                                    <td>Benjamon Ojeda Estrada</td>
+                                                    <td>4T</td>
+                                                    <td>Ojeda@gmail.com</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                       <div class="row mb-15">
+                                           <div class="col-md-4">
+                                            
+                                           </div>
+                                           <div class="col-md-4 text-center">
+                                                <h5>Ubicacion </h5>
+                                            </div>
+                                            <div class="col-md-4">
+
+                                            </div>
+                                       </div>
+                                       <div class="row">
+                                            <div class="col-md-3">
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Salon:</label>
+                                                        <div class="col-md-9">
+                                                            <input size="16" type="text" value=""  class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Grupo:</label>
+                                                        <div class="col-md-9">
+                                                            <input size="16" type="text" value=""  class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+
+                                            </div>
+                                        </div>
+                                        <div class="row mt-15">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-3"><button class="btn btn-red ml-60">Cancelar</button></div>
+                                            <div class="col-md-3"><button class="btn btn-green ml-60">Guardar</button></div>
+                                            <div class="col-md-3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -217,13 +294,15 @@
 <script src="plugins/dropzone/dist/dropzone.js"></script>
 <script src="js/scripts.js"></script>
 <script type="text/javascript">
-    Dropzone.autoDiscover = false;
+   
     $(document).ready(function(){
-        $("#btn-Excel").click(function(){
-            $("#modalExcel").modal();
+        $("#AlumTable").DataTable({
+            bPaginate: true,
+            bLengthChange: false,
+            searching: false,
+            info: false,
+            bAutoWidth: false
         });
-
-        $("#ExcelDrop").dropzone({ url: "/file/post" });
     });
 </script>
 
