@@ -344,7 +344,7 @@ a.logo {
     font-size:21px;
     color:#2e2e2e;
     float:left;
-    margin:20px 0 0 25px;
+    margin: 5px 0 0 45px;
     text-transform:uppercase;
 }
 a.logo:hover,a.logo:focus {
@@ -5773,5 +5773,8 @@ right: -1px;
     width: 90%;
 }
 .w-50{
-    width: 50%;
-}
+    width: 50%  !important;
+}   
+.w-70{
+    width: 70%  !important;
+}   
