@@ -5715,6 +5715,7 @@ right: -1px;
     background-color: #FD6F71 !important;
     color: white !important;
     border-radius: 2px  !important;
+    border: 0px none !important;
 }
 
 .btn-blue {
@@ -5722,18 +5723,28 @@ right: -1px;
     background-color: #63ADFC !important;
     color: white !important;
     border-radius: 2px !important;
+    border: 0px none !important;
 }
 .btn-yellow {
     margin-right: 10px !important;
-    background-color: #FFC107 !important;
+    background-color: #E2CB70 !important;
     color: white !important;
     border-radius: 2px !important;
+    border: 0px none !important;
 }
 .btn-green {
     margin-right: 10px !important;
     background-color: #1CB7A0 !important;
     color: white !important;
     border-radius: 2px !important;
+    border: 0px none !important;
+}
+.btn-gray {
+    margin-right: 10px !important;
+    background-color: #919FA7 !important;
+    color: white !important;
+    border-radius: 2px !important;
+    border: 0px none !important;
 }
 .py-15{
  padding: 15px !important;
